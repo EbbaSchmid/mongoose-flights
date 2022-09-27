@@ -2,45 +2,29 @@
 <link rel="stylesheet" href="/stylesheets/flights/new.css" />
 <%- include('../partials/nav') %>
 
-
 <main>
   <h1><%= title %></h1>
-  <form id="new-form" action="/flights" method="">
-    <label for="airline-select">Airline:</label>
-    <select name="airline" id="airline-select">
-    <input 
-    <option value="<%= flight.airline %>"><%= flights.airline %></option>
-      <option value="American">American</option>
-      <option value="Southwest">Southwest</option>
-      <option value="United">United</option>
-    </select>
+  <form id="new-form" action="/flights" method="POST">
+
+    <label for="airline-input">Airline:</label>
+    <input type="text" name="airline" id="airline-input">
 
     <label for="airport-input">Airport:</label>
-    <select name="airport" id="airport-select">
-    <input
-    <option value="<%= flight.airport %>"><%= flights.airport %></option>
-    <option value="AUS">AUS</option>
-    <option value="DFW">DFW</option>
-    <option value="DEN">DEN</option>
-    <option value="LAX">LAX</option>
-    <option value="SAN">SAN</option>
+    <select name="airport">
+      <option value="DEN">DEN</option>
+      <option value="DTW">DTW</option>
+      <option value="LGA">LGA</option>
+      <option value="EWR">EWR</option>
     </select>
 
-    <label for="flightNo">Flight Number:</label>
-    <select name="flightNo" id="flightNo-select">
-    </select>
+    <label for="flight-number-input">Flight Number:</label>
+    <input type="text" name="flightNo" id="flight-number-input">
 
-    <label for="departs">Departs:</label>
-    <input 
-      type="date"
-      name="departs"
-      id="departs-date">
+    <label for="departs-input">Departs:</label>
+    <input type="datetime-local" name="departs">
 
-      <button type="submit">Save Flight</button>
+    <button type="submit">Add Flight:</button>
   </form>
 </main>
-
-
-
 
 <%- include("../partials/footer") %>
