@@ -14,5 +14,5 @@ const flightSchema = new Schema({
 
 
 export {
-  Flight
+  flight
 }
