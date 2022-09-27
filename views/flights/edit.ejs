@@ -1,46 +1,37 @@
-<%- include('../partials/html-head')  %> 
-<link rel="stylesheet" href="/stylesheets/movies/edit.css" />
-<%- include('../partials/nav')  %>
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/flights/new.css" />
+<%- include('../partials/nav') %>
 
 <main>
   <h1><%= title %></h1>
-  <form 
-    id="new-form"
-    action="/flights/<%= flight._id %>?_method=PUT"
-    method="POST"
-  >
-    <label for="airline-select">Airline:</label>
-    <select name="airline" id="airline-select">
+  <form id="new-form" action="/flights/<%= flight._id %>?_method=PUT" method="POST">
+
+    <label for="airline-input">Airline:</label>
     <input 
-    <option value="<%= flight.airline %>"><%= flights.airline %></option>
-      <option value="American">American</option>
-      <option value="Southwest">Southwest</option>
-      <option value="United">United</option>
-  </select>
+      type="text" 
+      name="airline" 
+      value="<%= flight.airline %>" id="airline-input"
+      >
 
     <label for="airport-input">Airport:</label>
-    <select name="airport" id="airport-select">
-    <input
-    <option value="<%= flight.airport %>"><%= flights.airport %></option>
-    <option value="AUS">AUS</option>
-    <option value="DFW">DFW</option>
-    <option value="DEN">DEN</option>
-    <option value="LAX">LAX</option>
-    <option value="SAN">SAN</option>
-    </select>
+      <select name="airport"  value="<%= flight.airport %>" id="airport-input" >
+        <option value="<%= flight.airport %>"><%= flight.airport %></option>
+        <option value="DTW">DTW</option>
+        <option value="LGA">LGA</option>
+        <option value="DEN">DEN</option>
+        <option value="EWR">EWR</option>
+      </select>
+    
 
-    <label for="flightNo">Flight Number:</label>
-    <select name="flightNo" id="flightNo-select">
-    </select>
+    <label for="flight-number-input">Flight Number</label>
 
-    <label for="departs">Departs:</label>
-    <input 
-      type="date"
-      name="departs"
-      id="departs-date">
+    <input type="text" name="flightNo" value="<%= flight.flightNo %>" id="flight-number-input">
 
-    <button type="submit">Save Flight</button>
+    <label for="departs-input">Departs:</label>
+    <input type="datetime-local" value="<%= flight.departs %>" name="departs">
+
+    <button type="submit">Update Flight</button>
   </form>
 </main>
 
-<%- include('../partials/footer')  %> 
+<%- include("../partials/footer") %>
