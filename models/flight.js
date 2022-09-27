@@ -12,7 +12,8 @@ const flightSchema = new Schema({
   timestamps: true
 })
 
+const Flight = mongoose.model('Flight', flightSchema)
 
 export {
-  flight
+  Flight
 }
