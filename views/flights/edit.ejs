@@ -9,36 +9,36 @@
     action="/flights/<%= flight._id %>?_method=PUT"
     method="POST"
   >
-    <label for="Airline-input">Airline:</label>
+    <label for="airline-select">Airline:</label>
+    <select name="airline" id="airline-select">
     <input 
-    type="string" 
-    name="airline" 
-    id="airline-input" 
-    value="<%= flight.airline%>">
+    <option value="<%= flight.airline %>"><%= flights.airline %></option>
+      <option value="American">American</option>
+      <option value="Southwest">Southwest</option>
+      <option value="United">United</option>
+  </select>
 
     <label for="airport-input">Airport:</label>
+    <select name="airport" id="airport-select">
     <input
-      type="text" 
-      name="airport" 
-      id="airport-input" 
-      value="<%= flight.airport%>">
+    <option value="<%= flight.airport %>"><%= flights.airport %></option>
+    <option value="AUS">AUS</option>
+    <option value="DFW">DFW</option>
+    <option value="DEN">DEN</option>
+    <option value="LAX">LAX</option>
+    <option value="SAN">SAN</option>
+    </select>
 
     <label for="flightNo">Flight Number:</label>
     <select name="flightNo" id="flightNo-select">
-      <option value="<%= flight.flightNo %>"><%= flights.flightNo %></option>
-      <option value="G">G</option>
-      <option value="PG">PG</option>
-      <option value="PG-13">PG-13</option>
-      <option value="R">R</option>
     </select>
 
     <label for="departs">Departs:</label>
     <input 
       type="date"
-      name="nowShowing"
-      id="now-showing-checkbox" 
-      <%= flight.departs ? 'checked' : '' %>
-    >
+      name="departs"
+      id="departs-date">
+
     <button type="submit">Save Flight</button>
   </form>
 </main>
