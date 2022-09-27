@@ -9,7 +9,7 @@ function newFlight(req, res) {
 }
 
 function create(req, res) {
-
+  res.redirect('/flights')  // update this line
 }
 
 export {
