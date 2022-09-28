@@ -16,7 +16,7 @@ function newMeal (reg, res) {
 }
 
 function create(req, res) {
-  Performer.create(req.body)
+  Meal.create(req.body)
   .then(meal => {
     res.redirect('/meals/new')
   })
@@ -28,5 +28,5 @@ function create(req, res) {
 
 export {
   create,
-  newMeal as new
+  newMeal as new,
 }
