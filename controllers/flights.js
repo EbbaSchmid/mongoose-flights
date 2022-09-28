@@ -1,4 +1,5 @@
 import { Flight } from "../models/flight.js"
+import { Meal } from "../models/meal.js"
 
 function newFlight(req, res) {
   res.render('flights/new', {
@@ -106,6 +107,21 @@ function createTicket(req, res) {
   })
 }
 
+function deleteTicket(req,res) {
+  Flight.findById(req.params.id)
+  .then(flight => {
+    flight.tickets.remove(req.params.ticketid)
+    flight.save()
+    .then(() => {
+      res.redirect('/flights/${flight._id}')
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/flights')
+    })
+  })
+}
+
 export {
   newFlight as new,
   index,
@@ -115,4 +131,6 @@ export {
   edit,
   update,
   createTicket,
+  deleteTicket,
+
 }
