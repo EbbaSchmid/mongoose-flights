@@ -3,9 +3,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const mealSchema = new Schema({
-  name: String,
-}, {
-  timestamps: true
+  name: String
 })
 
 const Meal = mongoose.model('Meal', mealSchema)

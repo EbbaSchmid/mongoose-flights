@@ -4,13 +4,6 @@
 
 <main>
   <h1><%= title %></h1>
-
-  <div>
-    <%= flight.title %> 
-    <a href="/flights/<%= flight._id %>/edit">
-      <button>Edit Flight</button>
-    </a>
-  </div>
   
   <section>
     <div>Airline: </div>
@@ -23,32 +16,46 @@
     <div><%= flight.departs %></div>
   </section>
 
-
+  <div>
+    <a href="/flights/<%= flight._id %>/edit">
+        <button>Edit Flight</button>
+    </a>
+  </div>
 
 </section>
-<% // new markup below %>
 <h2>Add Tickets</h2>
 <form 
   id="add-ticket-form"
   action="/flights/<%= flight._id %>/tickets"
-  method="POST"
->
-  <label for="content-textarea">Ticket:</label> -->
-  <textarea name="content" id="content-textarea"></textarea>
+  method="POST">
+  
+  <form>
   <label for="seat">Seat:</label>
-    <input name="seat" id="content-seat" type="text"> 
+    <input 
+    name="seat" 
+    id="seat-input" 
+    type="text"
+    required pattern="[A-F][1-9]\d?" 
+    placeholder="Enter seat">
+
     <label for="price">Price:</label>
-    <input name="price" id="content-price" type="number"> 
- 
+    <input 
+    name="price" 
+    id="content-price" 
+    type="number"
+    placeholder="Enter ticket price"> 
+
+    <button type ="submit">Add Ticket</button>
+  </form>
+
+  <h2>All Tickets:</h2>
   <% if (flight.tickets.length) { %>
-    <table>
+    <table id="ticketTable">
       <thead>
-        <button type="submit">Submit</button>
-        <h4>All Tickets</h4>
         <tr>
-          <th>Ticket</th>
-          <th>Seat</th>
           <th>Price</th>
+          <th>Seat</th>
+          <th>Delete</th>
         </tr>
       </thead>
 
@@ -58,15 +65,14 @@
             <td><%= ticket.seat %></td>
             <td><%= ticket.price %></td>
           </tr>
-        <% }) %>
+        <form action="/flights/<%= flight._id %>/tickets/<%= ticket._id %>?_method=DELETE" method="POST"> 
+            <button>X</button>
+        </form>
       </tbody>
     </table>
   <% } else { %>
     <h3>No Tickets Yet</h3>
   <% } %>
-
-
-</form>
 
 </main>
   
