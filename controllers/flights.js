@@ -12,7 +12,7 @@ function index(req, res) {
   .then(flights => {
     res.render('flights/index', {
       flights: flights,
-      title: 'All Flights'
+      title: 'All Flights',
     })
   })
   .catch(error => { // If there's an error, console.log it and redirect back home!
@@ -40,9 +40,9 @@ function create(req, res) {
 function show(req, res) {
   Flight.findById(req.params.id)
   .then(flight => {
-    res.render('flights/show', { 
-      title: 'Flight Detail', 
+    res.render('flights/show', {  
       flight: flight,
+      title: 'Flight Detail',
     })    
   })
   .catch(err => {
@@ -68,7 +68,7 @@ function edit(req, res) {
   .then(flight => {
     res.render("flights/edit", {
       flight, // same as: flight: flight
-      title: "Edit Flight"
+      title: "Edit Flight",
     })
   })
   .catch(err => {
