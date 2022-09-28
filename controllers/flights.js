@@ -125,5 +125,4 @@ export {
   update,
   createTicket,
   deleteTicket,
-
 }
