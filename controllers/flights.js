@@ -22,19 +22,16 @@ function index(req, res) {
 }
 
 function create(req, res) {
-
- // replace and split if it's not an empty string
   if (req.body.departs) {
-		// remove whitespace next to commas
     req.body.departs = req.body.departs
-  }
+    }
   Flight.create(req.body)
   .then(flight => {
     res.redirect(`/flights`)
-  })
+    })
   .catch(err => {
     res.redirect('/flights')
-  })
+    })
 }
 
 function show(req, res) {

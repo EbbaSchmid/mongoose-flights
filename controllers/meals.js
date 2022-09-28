@@ -8,7 +8,6 @@ function newMeal (reg, res) {
       meals: meals
     })
   })
-
 .catch(err => {
   console.log (err)
   res.redirect("/flights")
@@ -27,6 +26,6 @@ function create(req, res) {
 }
 
 export {
-  create,
   newMeal as new,
+  create,
 }

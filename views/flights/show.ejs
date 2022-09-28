@@ -33,32 +33,26 @@
   action="/flights/<%= flight._id %>/tickets"
   method="POST"
 >
-  <!-- <label for="content-textarea">Ticket:</label> -->
-  <!-- <textarea name="content" id="content-textarea"></textarea> -->
+  <label for="content-textarea">Ticket:</label> -->
+  <textarea name="content" id="content-textarea"></textarea>
   <label for="seat">Seat:</label>
-   <input name="seat" id="content-seat" type="text"> 
-   <label for="price">Price:</label>
-   <input name="price" id="content-price" type="number"> 
-  <!-- <label for="rating-select">Rating:</label>
-  <select name="rating" id="rating-select">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5" selected>5</option>
-  </select> -->
+    <input name="seat" id="content-seat" type="text"> 
+    <label for="price">Price:</label>
+    <input name="price" id="content-price" type="number"> 
+ 
   <% if (flight.tickets.length) { %>
     <table>
       <thead>
         <button type="submit">Submit</button>
         <h4>All Tickets</h4>
         <tr>
-          <!-- <th>Ticket</th> -->
+          <th>Ticket</th>
           <th>Seat</th>
           <th>Price</th>
         </tr>
       </thead>
-      <tbody>
+
+      <tbody> 
         <% flight.tickets.forEach(function(ticket) { %>
           <tr>
             <td><%= ticket.seat %></td>
@@ -72,8 +66,6 @@
   <% } %>
 
 
-
- 
 </form>
 
 </main>
