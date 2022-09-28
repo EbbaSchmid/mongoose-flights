@@ -15,9 +15,9 @@ function index(req, res) {
       title: 'All Flights',
     })
   })
-  .catch(error => { // If there's an error, console.log it and redirect back home!
+  .catch(error => { 
     console.log(err)
-    res.redirect('/')
+    res.redirect('/flights')
   })
 }
 
@@ -50,7 +50,7 @@ function show(req, res) {
 
 function deleteFlight(req, res) {
   Flight.findByIdAndDelete(req.params.id)
-  .then(() => {
+  .then(flight => {
     res.redirect("/flights")
   })
   .catch(err => {
@@ -64,7 +64,7 @@ function edit(req, res) {
   Flight.findById(req.params.id)
   .then(flight => {
     res.render("flights/edit", {
-      flight, // same as: flight: flight
+      flight: flight,
       title: "Edit Flight",
     })
   })
