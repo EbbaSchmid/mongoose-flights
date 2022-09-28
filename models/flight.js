@@ -9,27 +9,29 @@ const ticketSchema = new Schema({
     match: /[A-F][1-9]\d?/
   },
   price: {
-    type: Number, min: 0
-  }, 
+    type: Number, 
+    min: 0
+  } 
 })
 
 
 const flightSchema = new Schema({
   airline: {
     type: String, 
-
+    required: true,
     enum: ['Delta', 'TWA', 'Spirit']
   },
+  airport: [String],
   flightNo: {
-    type: Number, required: true
-  },
-  airport: {
-    type: [String]
+    type: Number, 
+    required: true
   },
   departs: {
-    type: Date, required: true
+    type: Date, 
+    required: true
   },
   tickets: [ticketSchema],
+  meals: [{type:Schema.Types.ObjectId, ref: "Meal"}]
 })
 
 const Flight = mongoose.model('Flight', flightSchema)

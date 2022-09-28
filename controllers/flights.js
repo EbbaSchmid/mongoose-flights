@@ -98,10 +98,6 @@ function createTicket(req, res) {
       res.redirect('/')
     })
   })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/')
-  })
 }
 
 function deleteTicket(req,res) {
