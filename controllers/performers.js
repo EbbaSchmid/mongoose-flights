@@ -10,7 +10,7 @@ function newPerformer(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/movies')
+    res.redirect('/flights')
   })
 }
 
