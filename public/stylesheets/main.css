@@ -63,19 +63,6 @@ nav > a {
   color:black;
 }
 
-/* nav > a:visited {
-  color: #08c6ec;
-}
-
-nav > a {
-  color: black;
-  background-color: #08c6ec;
-} */
-
-/* nav > a.active {
-  color: black;
-} */
-
 .fas::before {
   font-family: "Font Awesome 5 Free";
 }
