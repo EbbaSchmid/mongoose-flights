@@ -21,6 +21,9 @@ router.put('/:id', flightsCtrl.update)
 
 router.post('/:id/tickets', flightsCtrl.create)
 
+// POST /flights/:id/meals
+router.post('/:id/meals', flightsCtrl.newMeal)
+
 export {
 	router
 }
