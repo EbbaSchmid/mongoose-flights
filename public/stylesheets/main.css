@@ -60,21 +60,21 @@ nav > a {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
+  color:black;
+}
+
+/* nav > a:visited {
   color: #08c6ec;
 }
 
-nav > a:visited {
-  color: #08c6ec;
-}
-
-nav > a:hover {
+nav > a {
   color: black;
   background-color: #08c6ec;
-}
+} */
 
-nav > a.active {
+/* nav > a.active {
   color: black;
-}
+} */
 
 .fas::before {
   font-family: "Font Awesome 5 Free";
